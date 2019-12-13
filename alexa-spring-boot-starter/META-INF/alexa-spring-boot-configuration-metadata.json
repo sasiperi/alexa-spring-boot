@@ -1,0 +1,55 @@
+{"properties": [
+  {
+    "name": "spring.alexa.applicationId",
+    "type": "java.lang.String",
+    "description": "The application id that alexa(dev) provides amzn1.ask.skill.xxxxxxx"
+  },
+  {
+    "name": "spring.alexa.cardTitle",
+    "type": "java.lang.String",
+    "description": "card title that you want to go on the account alexa.amazon and in the appstore"
+  },  
+  {
+    "name": "spring.alexa.response.welcome",
+    "type": "java.lang.String",
+    "description": "Response for Welcome Intent.",
+     "defaultValue": "Welcome"   
+  },
+   {
+    "name": "spring.alexa.response.welcome",
+    "type": "java.lang.String",
+    "description": "Response for Hello Intent.",
+     "defaultValue": "Hello"   
+  },
+   {
+    "name": "spring.alexa.response.goodBye",
+    "type": "java.lang.String",
+    "description": "Response for good bye intent",
+     "defaultValue": "Good Bye"   
+  },
+   {
+    "name": "spring.alexa.response.helloIntent",
+    "type": "java.lang.String",
+    "description": "Response for Hello Intent.",
+     "defaultValue": "Hello"   
+  },
+   {
+    "name": "spring.alexa.response.helpIntent",
+    "type": "java.lang.String",
+    "description": "Response for Help Intent."    
+   },
+   {
+    "name": "spring.alexa.response.repromptHelpIntent",
+    "type": "java.lang.String",
+    "description": "Response for reprompting help.",
+     "defaultValue": "I'm sorry I didn't understand that. Could you please repeat Or you can say help to learn the valid actions"   
+  },
+   {
+    "name": "spring.alexa.response.repromptGenericIntent",
+    "type": "java.lang.String",
+    "description": "Generic Repormpt Intent.",
+    "defaultValue": "Would you like me to help with anything else ? If not you can say good bye"   
+  }
+  
+]}
+
