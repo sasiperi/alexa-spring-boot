@@ -30,10 +30,26 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties(prefix = "spring.alexa")
 public class AlexaProperties
 {
+    /*
+     * The application id that alexa(dev) provides amzn1.ask.skill.xxxxxxx
+     */
     private String applicationId;
+    /*
+     * card title that you want to go on the account alexa.amazon and in the appstore
+     */
     private String cardTitle;
+    /*
+     * Various pre-configured responses for standards intents, with default values, that can be overridden.     *
+     */
     private Response response; 
+    /*
+     * Comma separated list of speechlet URI mappings, which will be invoked for intent(s)
+     */
+    private String[] speechletUriMappings;
 
+    /*
+     * The application id that alexa(dev) provides amzn1.ask.skill.xxxxxxx
+     */
     public String getApplicationId()
     {
         return applicationId;
@@ -63,13 +79,47 @@ public class AlexaProperties
         this.response = response;
     }
 
+    public String[] getSpeechletUriMappings()
+    {
+        return speechletUriMappings;
+    }
+
+    public void setSpeechletUriMappings(String[] speechletUriMappings)
+    {
+        this.speechletUriMappings = speechletUriMappings;
+    }
+    
     public static class Response
     {
+        /*
+         * Response for Welcome Intent.
+         * defaultValue": "Welcome" 
+         */
         private String welcome;
+        /*
+         * Response for Good Bye Intent
+         * defaultValue: Good Bye
+         */
         private String goodBye;
+        /*
+         * Response for Hello Intent
+         * defaultValue: Hello
+         */
         private String helloIntent;
+        /*
+         * Response for Help Intent.
+         * defaultValue: Help
+         */
         private String helpIntent;
+        /*
+         * Response for reprompting help.
+         * defaultValue: I'm sorry I didn't understand that. Could you please repeat Or you can say help to learn the valid actions
+         */
         private String repromptHelpIntent;
+        /*
+         * Generic Repormpt Intent.
+         * defaultValue: Would you like me to help with anything else ? If not you can say good bye
+         */
         private String repromptGenericIntent;
 
         public String getWelcome()

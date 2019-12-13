@@ -52,9 +52,27 @@ import com.amazon.speech.ui.SsmlOutputSpeech;
  * instance. The implementation allows customization for a specific skill by overriding methods, for custom/specific intents (by overriding onIntent method for example)
  *
  * <p>
- *  To do this, you must create a class that extends SkillSpeechletDefaultImpl and override onIntent method
+ *  To do this, you must create a class that extends SkillSpeechletDefaultImpl and override onIntent method, inject the custom speechlet for example 
+ *  If you have 
+ *  <pre>
+ *  MySkillSpeechlet extends SkillSpeechletDefaultImpl
+ *  {
+ *    @Override
+ *    public SpeechletResponse onIntent(final IntentRequest request, final Session session) throws SpeechletException
+      {         
+ *    }
+ *  }
+ *  </pre>
+ *  then in your configuration do as below
  * </p>
- *
+ *  <pre>
+ *   
+ *  @Bean
+ *  public Speechlet mySkillSpeechlet()
+ *  {
+ *    return new MySkillSpeechlet();
+ *  }
+ *  </pre>
  * 
  *
  * @author @sasiperi

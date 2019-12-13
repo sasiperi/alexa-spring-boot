@@ -3,12 +3,12 @@
  */
 package org.peri.alexa.spring.boot.config;
 
-import org.peri.alexa.spring.boot.service.SkillSpeechletDefaultImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.amazon.speech.speechlet.Speechlet;
 import com.amazon.speech.speechlet.servlet.SpeechletServlet;
 
 /*
@@ -42,7 +42,7 @@ public class AlexaConfiguration
 
 
     @Autowired
-    private SkillSpeechletDefaultImpl speechlet;
+    private Speechlet speechlet;
     
     @Bean
     public ServletRegistrationBean<SpeechletServlet> registerServlet() 
