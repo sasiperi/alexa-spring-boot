@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>io.github.sasiperi</groupId>
 	<artifactId>alexa-spring-boot-starter</artifactId>
-	<version>1.0.2</version>
+	<version>1.0.3-SNAPSHOT</version>
 	<name>alexa-spring-boot-starter</name>
 	<inceptionYear>2019</inceptionYear>
 	<description>Alexa Spring Boot Starter</description>
@@ -21,7 +21,7 @@
         <connection>scm:git:git://github.com/sasiperi/alexa-spring-boot.git</connection>
 		<developerConnection>scm:git:git@github.com:sasiperi/alexa-spring-boot.git</developerConnection>
         <url>https://github.com/sasiperi/alexa-spring-boot.git</url>
-        <tag>alexa-spring-boot-starter-1.0.2</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <!-- ***************************** -->
