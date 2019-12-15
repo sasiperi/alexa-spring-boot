@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  org.peri.alexa.spring.boot.config.AlexaAutoConfiguration
+  io.github.sasiperi.alexa.spring.boot.config.AlexaAutoConfiguration

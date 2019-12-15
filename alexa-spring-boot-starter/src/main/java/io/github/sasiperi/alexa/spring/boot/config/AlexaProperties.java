@@ -1,4 +1,4 @@
-package org.peri.alexa.spring.boot.config;
+package io.github.sasiperi.alexa.spring.boot.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
