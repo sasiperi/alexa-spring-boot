@@ -1,4 +1,4 @@
-package org.peri.alexa.spring.boot.examples;
+package io.github.sasiperi.alexa.spring.boot.examples;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
