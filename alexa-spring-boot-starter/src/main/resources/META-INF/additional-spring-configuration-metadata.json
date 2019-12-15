@@ -1,45 +1,46 @@
-{"properties": [
-  {
-    "name": "spring.alexa.application-id",    
-    "description": "The application id that alexa(dev) provides amzn1.ask.skill.xxxxxxx"
-  },
-  {
-    "name": "spring.alexa.card-title",    
-    "description": "card title that you want to go on the account alexa.amazon and in the appstore"
-  },  
-  {
-    "name": "spring.alexa.response.welcome",    
-    "description": "Response for Welcome Intent.",
-     "defaultValue": "Welcome"   
-  },  
-   {
-    "name": "spring.alexa.response.good-bye",    
-    "description": "Response for good bye intent",
-     "defaultValue": "Good Bye"   
-  },
-   {
-    "name": "spring.alexa.response.hello-intent",   
-    "description": "Response for Hello Intent.",
-     "defaultValue": "Hello"   
-  },
-   {
-    "name": "spring.alexa.response.help-intent",    
-    "description": "Response for Help Intent."    
-   },
-   {
-    "name": "spring.alexa.response.reprompt-help-intent",    
-    "description": "Response for reprompting help.",
-     "defaultValue": "I'm sorry I didn't understand that. Could you please repeat Or you can say help to learn the valid actions"   
-  },
-   {
-    "name": "spring.alexa.response.reprompt-generic-intent",    
-    "description": "Generic Repormpt Intent.",
-    "defaultValue": "Would you like me to help with anything else ? If not you can say good bye"   
-  },
-  {
-    "name": "spring.alexa.speechlet-uri-mappings",    
-    "description": "Comma sepratated list of speechlet URI mappings, which will be invoked for intent(s)"      
-  }
-  
-]}
+{
+	"properties": [
+		{
+			"name": "spring.alexa.application-id",
+			"description": "The application id that alexa(dev) provides amzn1.ask.skill.xxxxxxx"
+		},
+		{
+			"name": "spring.alexa.card-title",
+			"description": "card title that you want to go on the account alexa.amazon and in the appstore"
+		},
+		{
+			"name": "spring.alexa.response.welcome",
+			"description": "Response for Welcome Intent.",
+			"defaultValue": "Welcome"
+		},
+		{
+			"name": "spring.alexa.response.good-bye",
+			"description": "Response for good bye intent",
+			"defaultValue": "Good Bye"
+		},
+		{
+			"name": "spring.alexa.response.hello-intent",
+			"description": "Response for Hello Intent.",
+			"defaultValue": "Hello"
+		},
+		{
+			"name": "spring.alexa.response.help-intent",
+			"description": "Response for Help Intent."
+		},
+		{
+			"name": "spring.alexa.response.reprompt-help-intent",
+			"description": "Response for reprompting help.",
+			"defaultValue": "I'm sorry I didn't understand that. Could you please repeat Or you can say help to learn the valid actions"
+		},
+		{
+			"name": "spring.alexa.response.reprompt-generic-intent",
+			"description": "Generic Repormpt Intent.",
+			"defaultValue": "Would you like me to help with anything else ? If not you can say good bye"
+		},
+		{
+			"name": "spring.alexa.speechlet-uri-mappings",
+			"description": "Comma sepratated list of speechlet URI mappings, which will be invoked for intent(s)"
+		}
+	]
+}
 
