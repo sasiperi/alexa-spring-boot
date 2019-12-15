@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>org.peri</groupId>
 	<artifactId>alexa-spring-boot-starter</artifactId>
-	<version>1.1-SNAPSHOT</version>
+	<version>1.1</version>
 	<name>alexa-spring-boot-starter</name>
 	<inceptionYear>2019</inceptionYear>
 	<description>Alexa Spring Boot Starter</description>
@@ -128,12 +128,18 @@
 					</executions>
 			</plugin>
 			
-			<!-- <plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-        		<artifactId>maven-javadoc-plugin</artifactId>
-        		<version>3.1.1</version>
+        		<artifactId>maven-javadoc-plugin</artifactId>        		
 				<configuration>
 					<encoding>UTF-8</encoding>
+					 <additionalDependencies>
+	                    <additionalDependency>
+	                        <groupId>javax.interceptor</groupId>
+	                        <artifactId>javax.interceptor-api</artifactId>
+	                        <version>1.2</version>
+	                    </additionalDependency>
+                	</additionalDependencies>					
 				</configuration>
 				<executions>
 					<execution>
@@ -142,14 +148,14 @@
 							<goal>jar</goal>
 						</goals>
 						<configuration>
-			            	<additionalparam>-Xdoclint:none</additionalparam>
+			            	<!-- <additionalparam>-Xdoclint:none</additionalparam> -->
 			            	<doclint>none</doclint>
 			            	<failOnError>false</failOnError>
 			                    	                    
 			            </configuration>
 					</execution>
 				</executions>
-			</plugin> -->
+			</plugin>
 			
             
             <plugin>
