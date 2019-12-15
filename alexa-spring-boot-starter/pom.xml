@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>org.peri</groupId>
 	<artifactId>alexa-spring-boot-starter</artifactId>
-	<version>1.1-SNAPSHOT</version>
+	<version>1.1</version>
 	<name>alexa-spring-boot-starter</name>
 	<inceptionYear>2019</inceptionYear>
 	<description>Alexa Spring Boot Starter</description>
