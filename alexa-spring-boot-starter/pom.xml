@@ -12,11 +12,48 @@
 	<artifactId>alexa-spring-boot-starter</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>alexa-spring-boot-starter</name>
+	<inceptionYear>2019</inceptionYear>
 	<description>Alexa Spring Boot Starter</description>
+	
+	<!-- ***************************** -->
+    <!-- * GIT (GITHUB) * -->
+    <!-- ***************************** -->
+    <scm>
+        <connection>scm:git:git://github.com/sasiperi/alexa-spring-boot.git</connection>
+		<developerConnection>scm:git:git@github.com:sasiperi/alexa-spring-boot.git</developerConnection>
+        <url>https://github.com/sasiperi/alexa-spring-boot.git</url>
+        <tag>master</tag>
+    </scm>
+
+    <!-- ***************************** -->
+    <!-- * LICENSE (APACHE2) * -->
+    <!-- ***************************** -->
+    <licenses>
+        <license>
+            <name>Apache 2</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <!-- ***************************** -->
+    <!-- * ORGANIZATION * -->
+    <!-- ***************************** -->
+    <organization>
+        <name>Peri Org</name>
+        <url>http://sasiperi.github.io</url>
+    </organization>
+
+    <!-- ***************************** -->
+    <!-- * PROPERTIES               * -->
+    <!-- ***************************** -->
 
 	<properties>
 		<java.version>1.8</java.version>
 		<alexa-sdk.version>1.8.1</alexa-sdk.version>
+		<!-- License -->
+        <license.licenseName>apache_v2</license.licenseName>
+        <license.licenseResolver>${project.baseUri}src/license</license.licenseResolver>
 	</properties>
 
 	<dependencies>
@@ -76,8 +113,88 @@
                     <target>${java.version}</target>
                 </configuration>
             </plugin>
+            
+             
+            <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>3.2.0</version>
+					<executions>
+						<execution>
+							<id>attach-sources</id>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+						</execution>
+					</executions>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+        		<artifactId>maven-javadoc-plugin</artifactId>
+        		<version>3.1.1</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
+				<executions>
+					<execution>
+						<id>attach-javadoc</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			
+            
+            <plugin>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>3.0.0</version>
+				<executions>
+					<execution>
+						<id>default-deploy</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>3.0.0-M1</version>
+				<configuration>
+					<localCheckout>true</localCheckout>
+					<pushChanges>false</pushChanges>
+					<mavenExecutorId>forked-path</mavenExecutorId>
+					<arguments>-Dgpg.passphrase=${gpg.passphrase}</arguments>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.maven.scm</groupId>
+						<artifactId>maven-scm-provider-gitexe</artifactId>
+						<version>1.11.2</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+           
+			            
         </plugins>
     </build>
-	
+    <distributionManagement>
+		<snapshotRepository>
+			<id>peri</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+				<id>peri</id>
+				<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+	    </repository>
+    
+    </distributionManagement>	
+    
+    <profiles></profiles>    
 
 </project>
