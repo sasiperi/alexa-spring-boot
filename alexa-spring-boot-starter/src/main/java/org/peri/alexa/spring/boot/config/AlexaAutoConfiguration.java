@@ -4,6 +4,8 @@
 package org.peri.alexa.spring.boot.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -33,13 +35,16 @@ import com.amazon.speech.speechlet.servlet.SpeechletServlet;
 
 
 /**
- * @author @sasiperi (mailto:pvssasikala@gmail.com)
+ *@author @sasiperi (mailto:pvssasikala@gmail.com)
  *
  */
 @Configuration
-public class AlexaConfiguration
+@ConditionalOnClass(Speechlet.class)
+@EnableConfigurationProperties(AlexaProperties.class)
+public class AlexaAutoConfiguration
 {
-
+    @Autowired
+    private AlexaProperties  alexaProps;
 
     @Autowired
     private Speechlet speechlet;
@@ -50,6 +55,6 @@ public class AlexaConfiguration
         SpeechletServlet speechletServlet = new SpeechletServlet();
         speechletServlet.setSpeechlet(this.speechlet);
 
-        return new ServletRegistrationBean<SpeechletServlet>(speechletServlet, "/alexaOms");
+        return new ServletRegistrationBean<SpeechletServlet>(speechletServlet, alexaProps.getSpeechletUriMappings());
     }
 }

@@ -23,6 +23,7 @@ import org.peri.alexa.spring.boot.config.AlexaProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.stereotype.Service;
 
 import com.amazon.speech.slu.Intent;
@@ -75,18 +76,17 @@ import com.amazon.speech.ui.SsmlOutputSpeech;
  *  </pre>
  * 
  *
- * @author @sasiperi
+ *@author @sasiperi (mailto:pvssasikala@gmail.com)
  * @version1.0
  */
 @Service
+@ConditionalOnMissingBean
 public class SkillSpeechletDefaultImpl implements Speechlet
 {
     private static final Logger LOG = LoggerFactory.getLogger(SkillSpeechletDefaultImpl.class);
     
     @Autowired
     private AlexaProperties  alexaProps;
-    
-    public static final String CUSTOMER_ID = "CustomerId";
     
     
     @Override
@@ -99,10 +99,6 @@ public class SkillSpeechletDefaultImpl implements Speechlet
             LOG.warn(" This skill is not authenticated and authorized, you may want to secure the skill !");
             
         }
-        
-        int customerId = (Integer)session.getAttribute(CUSTOMER_ID);
-        LOG.debug(" Customer Id is: " + customerId);
-        
         
     }
 
@@ -253,6 +249,6 @@ public class SkillSpeechletDefaultImpl implements Speechlet
 
         return SpeechletResponse.newAskResponse(outputSpeech, reprompt, card);
     }
-
+ 
    
 }

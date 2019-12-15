@@ -23,7 +23,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  */
 
 /**
- * @author @sasiperi (mailto:pvssasikala@gmail.com)
+ *@author @sasiperi (mailto:pvssasikala@gmail.com) (mailto:pvssasikala@gmail.com)
  *
  */
 
