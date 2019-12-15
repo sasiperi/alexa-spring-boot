@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.2.2.RELEASE</version>
-		<relativePath /> <!-- lookup parent from repository -->
+		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>org.peri</groupId>
 	<artifactId>alexa-spring-boot-starter</artifactId>
-	<version>1.0</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<name>alexa-spring-boot-starter</name>
 	<inceptionYear>2019</inceptionYear>
 	<description>Alexa Spring Boot Starter</description>
@@ -21,7 +22,7 @@
         <connection>scm:git:git://github.com/sasiperi/alexa-spring-boot.git</connection>
 		<developerConnection>scm:git:git@github.com:sasiperi/alexa-spring-boot.git</developerConnection>
         <url>https://github.com/sasiperi/alexa-spring-boot.git</url>
-        <tag>HEAD</tag>
+        <tag>master</tag>
     </scm>
 
     <!-- ***************************** -->
@@ -194,6 +195,6 @@
     
     </distributionManagement>	
     
-    <profiles />    
+    <profiles></profiles>    
 
 </project>
