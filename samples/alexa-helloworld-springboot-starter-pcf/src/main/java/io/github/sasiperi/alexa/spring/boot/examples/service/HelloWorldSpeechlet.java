@@ -23,10 +23,10 @@
  *@author @sasiperi (mailto:pvssasikala@gmail.com)
  *
  */
-package org.peri.alexa.spring.boot.examples.service;
+package io.github.sasiperi.alexa.spring.boot.examples.service;
 
-import org.peri.alexa.spring.boot.config.AlexaProperties;
-import org.peri.alexa.spring.boot.service.SkillSpeechletDefaultImpl;
+import io.github.sasiperi.alexa.spring.boot.config.AlexaProperties;
+import io.github.sasiperi.alexa.spring.boot.service.SkillSpeechletDefaultImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

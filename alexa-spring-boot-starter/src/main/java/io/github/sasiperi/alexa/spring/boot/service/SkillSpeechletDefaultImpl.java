@@ -17,9 +17,8 @@
  * limitations under the License.
  * #L%
  */
-package org.peri.alexa.spring.boot.service;
+package io.github.sasiperi.alexa.spring.boot.service;
 
-import org.peri.alexa.spring.boot.config.AlexaProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +39,8 @@ import com.amazon.speech.ui.PlainTextOutputSpeech;
 import com.amazon.speech.ui.Reprompt;
 import com.amazon.speech.ui.SimpleCard;
 import com.amazon.speech.ui.SsmlOutputSpeech;
+
+import io.github.sasiperi.alexa.spring.boot.config.AlexaProperties;
 
 /**
  * This is the speechlet that hanles are Order Tracking related intent requests

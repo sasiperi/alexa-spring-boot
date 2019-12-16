@@ -8,7 +8,7 @@
 		<version>2.2.2.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>org.peri</groupId>
+	<groupId>io.github.sasiperi</groupId>
 	<artifactId>alexa-helloworld-springboot-starter-pcf</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>alexa-helloworld-springboot-starter-pcf</name>
@@ -26,9 +26,9 @@
 		
 		
 		<dependency>
-			<groupId>org.peri</groupId>
+			<groupId>io.github.sasiperi</groupId>
 			<artifactId>alexa-spring-boot-starter</artifactId>
-			<version>0.0.1-SNAPSHOT</version>		
+			<version>1.0-SNAPSHOT</version>		
 		</dependency>
 
 		<dependency>

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.peri.alexa.spring.boot.config;
+package io.github.sasiperi.alexa.spring.boot.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
