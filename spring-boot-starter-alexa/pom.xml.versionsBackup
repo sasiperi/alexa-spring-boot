@@ -8,9 +8,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>io.github.sasiperi</groupId>
-	<artifactId>alexa-spring-boot-starter</artifactId>
-	<version>1.0.3-SNAPSHOT</version>
-	<name>alexa-spring-boot-starter</name>
+	<artifactId>spring-boot-starter-alexa</artifactId>
+	<version>1.1-SNAPSHOT</version>
+	<name>spring-boot-starter-alexa</name>
 	<inceptionYear>2019</inceptionYear>
 	<description>Alexa Spring Boot Starter</description>
 	

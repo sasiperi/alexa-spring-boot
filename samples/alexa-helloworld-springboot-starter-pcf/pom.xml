@@ -27,8 +27,8 @@
 		
 		<dependency>
 			<groupId>io.github.sasiperi</groupId>
-			<artifactId>alexa-spring-boot-starter</artifactId>
-			<version>1.0-SNAPSHOT</version>		
+			<artifactId>spring-boot-starter-alexa</artifactId>
+			<version>1.0</version>		
 		</dependency>
 
 		<dependency>
@@ -54,14 +54,14 @@
 	</build>
 	
 	<repositories>		
-		<repository>
+		<!-- <repository>
 			<id>localrepository</id>
 			<name>localrepository</name>
 			<url>file://C:/Users/venkatasuryasasikala/.m2/repository</url>
 			<snapshots>
 				<enabled>true</enabled>
 			</snapshots>
-		</repository>
+		</repository> -->
 		<!-- <repository>
 			<id>spring-milestones</id>
 			<name>Spring Milestones</name>
