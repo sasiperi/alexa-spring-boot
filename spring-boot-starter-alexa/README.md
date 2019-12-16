@@ -145,7 +145,7 @@ public class HelloWorldSpeechlet extends SkillSpeechletDefaultImpl
 * You can now test default intents and HelloWorld custom intent as shown in the below screen shot.
 **You can see Alexa responses are created based on the configuration, as shown in the below Screenshot.
 
-[Alexa Simulator Test](https://sasiperi.github.io/blog//static/img/alexa-helloworld-springboot-starter.png)
+![Alexa Simulator Test](https://sasiperi.github.io/blog//static/img/alexa-helloworld-springboot-starter.png)
 
 ### Break down into end to end tests
 
