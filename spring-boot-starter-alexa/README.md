@@ -1,6 +1,12 @@
-# Project Title
+# Spring Boot Starter for Alexa (Alexa v1 SDK)
 
-One Paragraph of project description goes here
+This project is a spring boot starter, that helps to Host a Custom Skill as a Web Service, using SpringBoot. This boot starter, 
+* Auto configures Speechlet, abstracts all the boilerplate code that is needed Alexa Skill Kit.
+* Provides default implementation for generic intents, that would occur during the life cycle of the custom intents (start session, wakeup words, ending sessions and Alexa Build in Intents such as welcome/hello). This all can be managed by configuring proper responses in the application.propeties
+
+This project is licenced under Apache v2
+
+This guide walks you through the process of building an application that uses Spring Boot Starter Alexa, to build custom skill as a web service.
 
 ## Getting Started
 
