@@ -4,6 +4,9 @@ This project is a spring boot starter, that helps to Host a Custom Skill as a We
 * Auto configures Speechlet, abstracts all the boilerplate code that is needed Alexa Skill Kit.
 * Provides default implementation for generic intents, that would occur during the life cycle of the custom intents (start session, wakeup words, ending sessions and Alexa Build in Intents such as welcome/hello). This all can be managed by configuring proper responses in the application.propeties
 
+## *Alexa SDK Note*
+**This starter is compatable (and is built using) Amazon Alexa SK V1. Spring Boot Starter for V2 (ASK SDK) is underway soon to be relased. Watch out this space !!**
+
 This project is licenced under Apache v2
 
 This guide walks you through the process of building an application that uses Spring Boot Starter Alexa, to build custom skill as a web service.
@@ -179,5 +182,8 @@ I use [SemVer](http://semver.org/) for versioning. For the versions available, s
 This project is licensed under the Apache V2 License - see the [LICENSE](https://github.com/sasiperi/alexa-spring-boot/blob/master/LICENSE) file for details
 
 ## Acknowledgments
+### Inspiration
+1. [David Conway](https://www.linkedin.com/in/david-conway-31681513/?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_top%3BYB6kGZP%2FQdSP%2Fzr%2B2vFEzw%3D%3D&licu=urn%3Ali%3Acontrol%3Ad_flagship3_search_srp_top-search_srp_result&lici=FXLx3kG0REi70kl3UZAElw%3D%3D), Managing Director, Morgan Stanely
+2. [Jim Shingler](https://github.com/jshingler), Director, Enterprise Arch, Cardinal Health
 
 
