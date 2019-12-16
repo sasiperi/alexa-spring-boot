@@ -12,19 +12,34 @@ This guide walks you through the process of building an application that uses Sp
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Prerequisites
+### What you will build
+You will build simple Hello World custom skill, as a webservice (endpoint /helloworld)
 
-What things you need to install the software and how to install them
+### Prerequisites  (what you will need)
+
+* About 15 minutes to build skill, using starter project
+* Abput 15 minutes to test.
+** About 10 minutes to configure your skill on Alexa (you will need account to access Alexa Developer Console
+** About 5 minutes to test using Alexa Voice/Echo simulator
+* A favorite text editor or IDE
+* JDK 1.8 or later
+* Gradle 4+ or Maven 3.2+
+* You can also import the sample code (under samples/alexa-helloworld-springboot-starter-pcf, which is created as a maven project) straight into your IDE as maven project:
+** Eclipse/Spring Tool Suite (STS)
+** IntelliJ IDEA
 
 ```
 Give examples
 ```
 
-### Installing
+### How to use boot starter and create skill? 
 
 A step by step series of examples that tell you how to get a development env running
 
-Say what the step will be
+#### Add maven dependency
+Current release version is 1.0.
+https://github.com/sasiperi/alexa-spring-boot/blob/86300097178b1a57f77aa05d19451fe098211a70/samples/alexa-helloworld-springboot-starter-pcf/pom.xml#L28-L32
+
 
 ```
 Give the example
@@ -44,7 +59,6 @@ Explain how to run the automated tests for this system
 
 ### Break down into end to end tests
 
-Explain what these tests test and why
 
 ```
 Give an example
