@@ -27,8 +27,8 @@
 		
 		<dependency>
 			<groupId>io.github.sasiperi</groupId>
-			<artifactId>spring-boot-starter-alexa</artifactId>
-			<version>1.0</version>		
+			<artifactId>alexa-spring-boot-starter</artifactId>
+			<version>1.0.3</version>		
 		</dependency>
 
 		<dependency>

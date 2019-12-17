@@ -27,7 +27,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  *
  */
 
-@ConfigurationProperties(prefix = "spring.alexa")
+@ConfigurationProperties(prefix = "alexa")
 public class AlexaProperties
 {
     /*
