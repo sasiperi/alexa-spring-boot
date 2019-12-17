@@ -51,8 +51,8 @@ https://github.com/sasiperi/alexa-spring-boot/blob/86300097178b1a57f77aa05d19451
 ~~~xml
     <dependency>
 			<groupId>io.github.sasiperi</groupId>
-			<artifactId>spring-boot-starter-alexa</artifactId>
-			<version>1.0</version>		
+			<artifactId>alexa-spring-boot-starter</artifactId>
+			<version>1.0.3</version>		
 		</dependency>
 ~~~
 
@@ -66,19 +66,19 @@ below are the availableample properties
 ~~~.prperties
 
 ###The application id that alexa(dev) provides amzn1.ask.skill.xxxxxxx###
-spring.alexa.application-id=amzn1.ask.skill.481fb850-g95a-5345-9h29-14fbbc889944
+alexa.application-id=amzn1.ask.skill.481fb850-g95a-5345-9h29-14fbbc889944
 
 ###### card title that you want to go on the account alexa.amazon and in the appstore ####
-spring.alexa.card-title=alexa-hello
+alexa.card-title=alexa-hello
 
 #####Comma sepratated list of speechlet URI mappings, which will be invoked for intent(s) ############
-spring.alexa.speechlet-uri-mappings=/alexaHello
+alexa.speechlet-uri-mappings=/alexaHello
 
 ############## Various responses, for generic actions and intents ###################
-spring.alexa.response.good-bye= Good Bye Sample Spring Boot Hello 
-spring.alexa.response.hello-intent=Hello Sample Spring Boot Hello
-spring.alexa.response.help-intent=Help Sample Spring Boot Hello
-spring.alexa.response.welcome=Welcome Sample Spring Boot Hello
+alexa.response.good-bye= Good Bye Sample Spring Boot Hello 
+alexa.response.hello-intent=Hello Sample Spring Boot Hello
+alexa.response.help-intent=Help Sample Spring Boot Hello
+alexa.response.welcome=Welcome Sample Spring Boot Hello
 ~~~
 
 End with an example of getting some data out of the system or using it for a little demo
