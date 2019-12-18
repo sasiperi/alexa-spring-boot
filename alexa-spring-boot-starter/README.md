@@ -59,7 +59,7 @@ https://github.com/sasiperi/alexa-spring-boot/blob/86300097178b1a57f77aa05d19451
 #### Configure application properties. 
 * You can in your YAML or .properties file use tab for hints of all available properties and the default values provided.
 * You can override these in your application's app.props (or YAML)
-* All the available properties start with **spring.alexa**
+* All the available properties start with **alexa.**
 * Check the additional properties meta data for details of what each property means, what are the allowed values.
 below are the availableample properties
 
@@ -92,8 +92,12 @@ Example snippet
 **Note:
 
   * AlexaProperties is a comvenient class (bean) injected, to access any props starting with "alexa."
-  * AlexaProperties bean is injected by starter and can be autowired to detect all/any props starting with "alexa." in your skill project a) either to override default properties from starter b) or you want your own properties.
-   For example if you created a brand new prop called alexa.myProp then @alexaProperties.getMyprop() will give you this value OR if you have alexa.hello-intent  @alexaProperties.getHelloIntent() will give inject the overriden value into your skill app.
+  * AlexaProperties bean is injected by starter and can be autowired to detect all/any props starting with "alexa." in your skill project
+      - either to override default properties from starter 
+      - or you want your own properties.
+      - **For example* 
+          - If you created a brand new prop called alexa.myProp then @alexaProperties.getMyprop() will give you this value 
+	      - OR if you have alexa.hello-intent  @alexaProperties.getHelloIntent() will give inject the overriden value into your skill app.
 
 ##### Authentication, Autherization and Account Linking
   * To enable authentication, autherization, you may need to override other methods in the default impl.
@@ -142,8 +146,8 @@ public class HelloWorldSpeechlet extends SkillSpeechletDefaultImpl
 
 * Get an account to Amazon Alexa developer console.
 * Add and configure your skill.  
-..* the endpoint requires a public hhtp/https url, which can inherit certs from the main domain e.g. hosted on PWS, can inherit from PWS
-..* OR for local testing, Amazon susggests NGROK that can expose a HTTP/HTTPS urls, that can be used to configure endpoints, which would rout the request to an application running on your localhost:port.
+    - the endpoint requires a public hhtp/https url, which can inherit certs from the main domain e.g. hosted on PWS, can inherit from PWS
+    - OR for local testing, Amazon susggests NGROK that can expose a HTTP/HTTPS urls, that can be used to configure endpoints, which would rout the request to an application running on your localhost:port.
 * Click on the skill and create your speech assets.
 * Sample hello world sppech assets for this sample application can be found here, that can be copy pasted.
 : [Hello World Speech Assets](https://github.com/sasiperi/alexa-spring-boot/tree/master/samples/alexa-helloworld-springboot-starter-pcf/src/main/resources/speechAssets)
@@ -166,7 +170,7 @@ public class HelloWorldSpeechlet extends SkillSpeechletDefaultImpl
 * [SonaType](https://oss.sonatype.org/)
 * [Nexus Repo](https://rometools.github.io/rome/) - Artifacts Repo
 * [Maven Central](https://repo.maven.apache.org/maven2/io/github/sasiperi/alexa-spring-boot-starter/)
-* ngrok [NGROC]  really rocks, and lets you test skills locally, on local host.
+* ngrok [https://ngrok.com/]  really rocks, and lets you test skills locally, on local host.
 
 ## Contributing
 
