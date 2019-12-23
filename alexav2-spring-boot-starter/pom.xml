@@ -12,7 +12,7 @@
 	<version>1.0.2-SNAPSHOT</version>
 	<name>alexav2-spring-boot-starter</name>
 	<inceptionYear>2019</inceptionYear>
-	<description>Alexa Spring Boot Starter</description>
+	<description>Alexa Spring Boot Starter for V2 SDK (ASK-SDK)</description>
 	
 	<!-- ***************************** -->
     <!-- * GIT (GITHUB) * -->
