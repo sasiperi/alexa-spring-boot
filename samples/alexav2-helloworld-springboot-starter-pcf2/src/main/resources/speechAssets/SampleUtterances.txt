@@ -1,0 +1,19 @@
+HelloWorldIntent say hello
+HelloWorldIntent say hello world
+HelloWorldIntent hello
+HelloWorldIntent say hi
+HelloWorldIntent say hi world
+HelloWorldIntent hi
+HelloWorldIntent how are you
+
+AMAZON.HelpIntent help
+AMAZON.HelpIntent help me
+AMAZON.HelpIntent I need help
+AMAZON.HelpIntent need help
+
+AMAZON.StopIntent quit
+AMAZON.StopIntent exit
+AMAZON.StopIntent stop
+AMAZON.StopIntent good bye
+AMAZON.StopIntent close
+AMAZON.StopIntent end

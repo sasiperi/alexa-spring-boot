@@ -1,0 +1,11 @@
+---
+applications:
+- name: alexa-hello
+  #memory: 1G
+  random-route: true
+  path: target\alexa-helloworld-springboot-starter-pcf-0.0.1-SNAPSHOT.jar
+  buildpack: https://github.com/cloudfoundry/java-buildpack.git
+  host: alexa-hello
+  
+  env:
+    amznAppID: amzn1.ask.skill.alexaHello
