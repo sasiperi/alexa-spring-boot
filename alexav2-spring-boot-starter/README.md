@@ -1,4 +1,4 @@
-# Spring Boot Starter for Alexa (Alexa v1 SDK)
+# Spring Boot Starter for Alexa V2 SDK (ASK-SDK)
 
 This project is a spring boot starter for alexa sdk version2 namely ask-sdk, that helps to Host a Custom Skill as a Web Service, using SpringBoot. This boot starter, 
 * Auto configures Speechlet, abstracts all the boilerplate code that is needed Alexa Skill Kit.
