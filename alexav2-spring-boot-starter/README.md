@@ -1,11 +1,11 @@
 # Spring Boot Starter for Alexa (Alexa v1 SDK)
 
-This project is a spring boot starter, that helps to Host a Custom Skill as a Web Service, using SpringBoot. This boot starter, 
+This project is a spring boot starter for alexa sdk version2 namely ask-sdk, that helps to Host a Custom Skill as a Web Service, using SpringBoot. This boot starter, 
 * Auto configures Speechlet, abstracts all the boilerplate code that is needed Alexa Skill Kit.
 * Provides default implementation for generic intents, that would occur during the life cycle of the custom intents (start session, wakeup words, ending sessions and Alexa Build in Intents such as welcome/hello). This all can be managed by configuring proper responses in the application.propeties
 
-#### *Alexa SDK Note*
-**This starter is compatable (and is built using) Amazon Alexa SK V1. Spring Boot Starter for V2 (ASK SDK) is underway soon to be relased. Watch out this space !!**
+#### *Version Note*
+**Amazon Alexa SDK V2(ASK SDK) still requires Java 8. And thus this starter also built with java 8.
 
 This project is licenced under Apache v2
 
@@ -37,7 +37,8 @@ Give examples
 
 ### How to use boot starter and create skill? 
 
-A step by step series of examples that tell you how to get a development env running
+- The referance (hello world) project using this version of the boot-starter is here [alexav2-helloworld-springboot-starter-pcf](https://github.com/sasiperi/alexa-spring-boot/tree/master/alexav2-spring-boot-starter)
+- Here is a step by step approach of how this can be used.
 
 #### Add maven (or gradel) dependency
 Crate a spring boot starter project using spring boot initializer available in IDE (rest) or from start.spring.io.
@@ -49,100 +50,121 @@ Crate a spring boot starter project using spring boot initializer available in I
 https://github.com/sasiperi/alexa-spring-boot/blob/86300097178b1a57f77aa05d19451fe098211a70/samples/alexa-helloworld-springboot-starter-pcf/pom.xml#L28-L32
 
 ~~~xml
-    <dependency>
+    		<dependency>
 			<groupId>io.github.sasiperi</groupId>
-			<artifactId>spring-boot-starter-alexa</artifactId>
-			<version>1.0</version>		
+			<artifactId>alexav2-spring-boot-starter</artifactId>
+			<version>1.0.2</version>		
 		</dependency>
 ~~~
 
 #### Configure application properties. 
 * You can in your YAML or .properties file use tab for hints of all available properties and the default values provided.
 * You can override these in your application's app.props (or YAML)
-* All the available properties start with **spring.alexa**
+* All the available properties start with **alexa.**
 * Check the additional properties meta data for details of what each property means, what are the allowed values.
 below are the availableample properties
+* Important ones are 
+   a) URI path, an endpoint name specific to your skill that you would like Alexa to send the requests to. This will be used by the starter while registering the ask-sdk skill servelet.
+   b) application id, unique id provided by amazon while creating/configuring the skill on dev console.
+   c) the card-title
 
 ~~~.prperties
 
 ###The application id that alexa(dev) provides amzn1.ask.skill.xxxxxxx###
-spring.alexa.application-id=amzn1.ask.skill.481fb850-g95a-5345-9h29-14fbbc889944
+alexa.application-id=amzn1.ask.skill.481fb850-g95a-5345-9h29-14fbbc889944
 
 ###### card title that you want to go on the account alexa.amazon and in the appstore ####
-spring.alexa.card-title=alexa-hello
+alexa.card-title=alexa-hello
 
-#####Comma sepratated list of speechlet URI mappings, which will be invoked for intent(s) ############
-spring.alexa.speechlet-uri-mappings=/alexaHello
+#####the (servelet mapping) URI path (enpoint) that Alexa would use to send the requests to ############
+alexa.speechlet-uri-mappings=/alexaHello
+
+##################### Default intents (that can be overriden) ##################
+alexa.intent.stop-intent = AMAZON.StopIntent
+alexa.intent.cancel-intent = AMAZON.CancelIntent
+alexa.intent.help-intent = AMAZON.HelpIntent
+alexa.intent.fallback-intent=AMAZON.FallbackIntent
 
 ############## Various responses, for generic actions and intents ###################
-spring.alexa.response.good-bye= Good Bye Sample Spring Boot Hello 
-spring.alexa.response.hello-intent=Hello Sample Spring Boot Hello
-spring.alexa.response.help-intent=Help Sample Spring Boot Hello
-spring.alexa.response.welcome=Welcome Sample Spring Boot Hello
+alexa.response.good-bye= Good Bye Sample Spring Boot Hello 
+alexa.response.hello-intent=Hello Sample Spring Boot Hello
+alexa.response.help-intent=Help Sample Spring Boot Hello
+alexa.response.welcome=Welcome Sample Spring Boot Hello
 ~~~
 
 End with an example of getting some data out of the system or using it for a little demo
 
 #### Creating Custom Skill Speechlet
-Starter will auto cinfigure ASK SDK for you. You need to override onIntent() method of the default Specchlet implementation.
-Example snippet
+1. Starter will auto cinfigure ASK SDK for you. ASK-SK v2 version modularized the intents, via handlers. Default implementaion the following handlers is been provided in the starter, these handlers are auto injected already, can be overridden.
+   a) CancelAndStopIntentHandler
+   b) FallbackIntentHandler
+   c) HelpIntentHandler
+   d) LaunchReuestHandler
+   e) SessionEndedRequestHandler
+2. These handlers can be extended and the "handle" method can be overridden to create specific implemenation.
+3. For any custom intenets, specific to you skills, you will need to create a spring class (with @Component), that extends RequestHandler. Starter lib auto adds all custom handlers that are extending RequestHandler and annotated with spring @Componnet to the 
+skills request handlers list by autowiring them.
+4. starter also injects AlexaProperties, a comvenient class (bean) injected, to access any props starting with "alexa." a can be autowired.
 
-[Example Snippet(https://github.com/sasiperi/alexa-spring-boot/blob/2c0a3eea40fe27da5d3b12c9dde126c5a968bb1d/samples/alexa-helloworld-springboot-starter-pcf/src/main/java/io/github/sasiperi/alexa/spring/boot/examples/service/HelloWorldSpeechlet.java#L47-L75)
-
-**Note:
-
-  * AlexaProperties bean is injected by starter and can be autowired to detect all/any props starting with spring.alexa.
 
 ##### Authentication, Autherization and Account Linking
   * To enable authentication, autherization, you may need to override other methods in the default impl.
   * An example project to demonstrate Auth using OAUTH2 (using auth-code grant) and does the account linking, is under samples/alexa-oms (sample order tracking skill for authorized customer).
 
 ~~~java
-@Service
-public class HelloWorldSpeechlet extends SkillSpeechletDefaultImpl
+@Component
+public class HelloWorldIntentHandler implements RequestHandler
 {
-    private static final Logger log = LoggerFactory.getLogger(HelloWorldSpeechlet.class);
-
-
+    private static final Logger LOG = LoggerFactory.getLogger(HelloWorldIntentHandler.class);
+    
     @Autowired
     private AlexaProperties alexaProps;
 
+    /*
+     * (non-Javadoc)
+     * 
+     * @see
+     * com.amazon.ask.request.handler.GenericRequestHandler#canHandle(java.lang.
+     * Object)
+     */
 
     @Override
-    public SpeechletResponse onIntent(final IntentRequest request, final Session session) throws SpeechletException
+    public boolean canHandle(HandlerInput input)
     {
-        log.info("onIntent requestId={}, sessionId={}", request.getRequestId(), session.getSessionId());
-
-
-        Intent intent = request.getIntent();
-        String intentName = (intent != null) ? intent.getName() : null;
-
-
-        if ("HelloWorldIntent".equals(intentName))
-        {
-            return getResponse(alexaProps.getResponse().getHelloIntent());
-        } else if ("AMAZON.HelpIntent".equals(intentName))
-        {
-            return getResponse(alexaProps.getResponse().getWelcome());
-        } else
-        {
-            throw new SpeechletException("Invalid Intent");
-        }
+        return input.matches(intentName("HelloWorldIntent"));
     }
 
+    /*
+     * (non-Javadoc)
+     * 
+     * @see
+     * com.amazon.ask.request.handler.GenericRequestHandler#handle(java.lang.
+     * Object)
+     */
+    @Override
+    public Optional<Response> handle(HandlerInput input)
+    {
+        
+        LOG.info("onIntent requestId={}, sessionId={}", input.getRequest().getRequestId(), input.getRequestEnvelope().getSession().getSessionId());
+        return input.getResponseBuilder().
+                withSpeech(alexaProps.getResponse().getGoodBye()).
+                withSimpleCard(alexaProps.getCardTitle(), alexaProps.getResponse().getWelcome()).
+                build();
+    }
 
 }
-
 ~~~
 
 
 ## Running the tests
 
 * Get an account to Amazon Alexa developer console.
-* Add and configure your skill.
+* Add and configure your skill.  
+    - the endpoint requires a public hhtp/https url, which can inherit certs from the main domain e.g. hosted on PWS, can inherit from PWS
+    - OR for local testing, Amazon susggests NGROK that can expose a HTTP/HTTPS urls, that can be used to configure endpoints, which would rout the request to an application running on your localhost:port.
 * Click on the skill and create your speech assets.
 * Sample hello world sppech assets for this sample application can be found here, that can be copy pasted.
-: [Hello World Speech Assets](https://github.com/sasiperi/alexa-spring-boot/tree/master/samples/alexa-helloworld-springboot-starter-pcf/src/main/resources/speechAssets)
+: [Hello World Speech Assets](https://github.com/sasiperi/alexa-spring-boot/tree/master/samples/alexav2-helloworld-springboot-starter-pcf/src/main/resources/speechAssets)
 
 * Go to Alexa Skill Simulator, activate your skill, using the wake up word.
 * You can now test default intents and HelloWorld custom intent as shown in the below screen shot.
@@ -162,6 +184,7 @@ public class HelloWorldSpeechlet extends SkillSpeechletDefaultImpl
 * [SonaType](https://oss.sonatype.org/)
 * [Nexus Repo](https://rometools.github.io/rome/) - Artifacts Repo
 * [Maven Central](https://repo.maven.apache.org/maven2/io/github/sasiperi/alexa-spring-boot-starter/)
+* ngrok [https://ngrok.com/]  really rocks, and lets you test skills locally, on local host.
 
 ## Contributing
 
