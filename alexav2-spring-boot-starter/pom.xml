@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>io.github.sasiperi</groupId>
 	<artifactId>alexav2-spring-boot-starter</artifactId>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.0.2</version>
 	<name>alexav2-spring-boot-starter</name>
 	<inceptionYear>2019</inceptionYear>
 	<description>Alexa Spring Boot Starter for V2 SDK (ASK-SDK)</description>
@@ -21,7 +21,7 @@
         <connection>scm:git:git://github.com/sasiperi/alexa-spring-boot.git</connection>
 		<developerConnection>scm:git:git@github.com:sasiperi/alexa-spring-boot.git</developerConnection>
         <url>https://github.com/sasiperi/alexa-spring-boot.git</url>
-        <tag>HEAD</tag>
+        <tag>alexav2-spring-boot-starter-1.0.2</tag>
     </scm>
 
     <!-- ***************************** -->
