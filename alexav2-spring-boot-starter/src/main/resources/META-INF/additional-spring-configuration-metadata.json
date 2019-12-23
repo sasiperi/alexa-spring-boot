@@ -1,0 +1,63 @@
+{
+	"properties": [
+		{
+			"name": "alexa.application-id",
+			"description": "The application id that alexa(dev) provides amzn1.ask.skill.xxxxxxx"
+		},
+		{
+			"name": "alexa.card-title",
+			"description": "card title that you want to go on the account alexa.amazon and in the appstore"
+		},
+		{
+			"name": "alexa.response.welcome",
+			"description": "Response for Welcome Intent.",
+			"defaultValue": "Welcome"
+		},
+		{
+			"name": "alexa.response.good-bye",
+			"description": "Response for good bye intent",
+			"defaultValue": "Good Bye"
+		},
+		{
+			"name": "alexa.response.hello-intent",
+			"description": "Response for Hello Intent.",
+			"defaultValue": "Hello"
+		},
+		{
+			"name": "alexa.response.help-intent",
+			"description": "Response for Help Intent."
+		},
+		{
+			"name": "alexa.response.reprompt-help-intent",
+			"description": "Response for reprompting help.",
+			"defaultValue": "I'm sorry I didn't understand that. Could you please repeat Or you can say help to learn the valid actions"
+		},
+		{
+			"name": "alexa.response.reprompt-generic-intent",
+			"description": "Generic Repormpt Intent.",
+			"defaultValue": "Would you like me to help with anything else ? If not you can say good bye"
+		},
+		{
+			"name": "alexa.speechlet-uri-mappings",
+			"description": "Comma sepratated list of speechlet URI mappings, which will be invoked for intent(s)"
+		},
+		{
+			"name": "alexa.intent.help-intent",
+			"description": "Name of the Help Intent",
+			"defaultValue": "AMAZON.HelpIntent"
+		},
+		{
+			
+			"name": "alexa.intent.stop-intent",
+			"description": "Name of the stop intent.",
+			"defaultValue": "AMAZON.StopIntent"
+		},
+		{
+			
+			"name": "alexa.intent.cancel-intent",
+			"description": "Name of the cancel intent",
+			"defaultValue": "AMAZON.CancelIntent"
+		}
+	]
+}
+
