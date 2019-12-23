@@ -1,8 +1,8 @@
 # Spring Boot Starter for Alexa V2 SDK (ASK-SDK)
 
 This project is a spring boot starter for alexa sdk version2 namely ask-sdk, that helps to Host a Custom Skill as a Web Service, using SpringBoot. This boot starter, 
-* Auto configures Speechlet, abstracts all the boilerplate code that is needed Alexa Skill Kit.
-* Provides default implementation for generic intents, that would occur during the life cycle of the custom intents (start session, wakeup words, ending sessions and Alexa Build in Intents such as welcome/hello). This all can be managed by configuring proper responses in the application.propeties
+* Auto registers (auto configures) ask servlet, abstracts all the boilerplate code that is needed by ask-sdk.
+* Provides default implementation for generic intents, that would occur during the life cycle of the skills (start session, wakeup words, ending sessions and Alexa Build in Intents such as welcome/hello). This all can be overriden by configuring proper responses in the application.propeties
 
 #### *Version Note*
 **Amazon Alexa SDK V2(ASK SDK) still requires Java 8. And thus this starter also built with java 8.
@@ -45,7 +45,7 @@ Crate a spring boot starter project using spring boot initializer available in I
 
 #### Add maven dependency
 * Open pom.xl (or gradle) and spring-boot-starter-alexa dependency.
-* Current release version is 1.0.
+* Current release version is 1.0.2
 
 https://github.com/sasiperi/alexa-spring-boot/blob/86300097178b1a57f77aa05d19451fe098211a70/samples/alexa-helloworld-springboot-starter-pcf/pom.xml#L28-L32
 
@@ -62,13 +62,12 @@ https://github.com/sasiperi/alexa-spring-boot/blob/86300097178b1a57f77aa05d19451
 * You can override these in your application's app.props (or YAML)
 * All the available properties start with **alexa.**
 * Check the additional properties meta data for details of what each property means, what are the allowed values.
-below are the availableample properties
 * Important ones are 
-   a) URI path, an endpoint name specific to your skill that you would like Alexa to send the requests to. This will be used by the starter while registering the ask-sdk skill servelet.
-   b) application id, unique id provided by amazon while creating/configuring the skill on dev console.
-   c) the card-title
-
-~~~.prperties
+    a) URI path, an endpoint name specific to your skill that you would like Alexa to send the requests to. This will be used by the starter while registering the ask-sdk skill servelet.
+    b) application id, unique id provided by amazon while creating/configuring the skill on dev console.
+    c) the card-title
+* Below are the availableample properties
+~~~.properties
 
 ###The application id that alexa(dev) provides amzn1.ask.skill.xxxxxxx###
 alexa.application-id=amzn1.ask.skill.481fb850-g95a-5345-9h29-14fbbc889944
@@ -94,13 +93,13 @@ alexa.response.welcome=Welcome Sample Spring Boot Hello
 
 End with an example of getting some data out of the system or using it for a little demo
 
-#### Creating Custom Skill Speechlet
-1. Starter will auto cinfigure ASK SDK for you. ASK-SK v2 version modularized the intents, via handlers. Default implementaion the following handlers is been provided in the starter, these handlers are auto injected already, can be overridden.
-   a) CancelAndStopIntentHandler
-   b) FallbackIntentHandler
-   c) HelpIntentHandler
-   d) LaunchReuestHandler
-   e) SessionEndedRequestHandler
+#### Creating Custom Skill (Intent)
+1. Starter will auto configure ASK SDK for you. ASK-SK v2 version modularized the intents, via handlers. Default implementaion the following handlers is been provided in the starter, these handlers are auto injected already, can be overridden.
+   1. CancelAndStopIntentHandler
+   2. FallbackIntentHandler
+   3. HelpIntentHandler
+   4. LaunchReuestHandler
+   5. SessionEndedRequestHandler
 2. These handlers can be extended and the "handle" method can be overridden to create specific implemenation.
 3. For any custom intenets, specific to you skills, you will need to create a spring class (with @Component), that extends RequestHandler. Starter lib auto adds all custom handlers that are extending RequestHandler and annotated with spring @Componnet to the 
 skills request handlers list by autowiring them.
