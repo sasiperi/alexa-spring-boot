@@ -1,0 +1,12 @@
+---
+applications:
+- name: alexa-oms
+  #memory: 1G
+  random-route: true
+  path: \target\alexa-oms-0.0.1-SNAPSHOT.jar
+        
+  buildpack: https://github.com/cloudfoundry/java-buildpack.git
+  host: alexa-oms
+  
+  env:
+    amznAppID: amzn1.ask.skill.bf1cd3c3-0b00-4ca4-b92b-68276106ba56

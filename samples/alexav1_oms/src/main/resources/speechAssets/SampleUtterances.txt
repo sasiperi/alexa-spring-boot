@@ -1,0 +1,80 @@
+HelloWorldIntent say hello
+HelloWorldIntent say hello world
+HelloWorldIntent hello
+HelloWorldIntent say hi
+HelloWorldIntent say hi world
+HelloWorldIntent hi
+HelloWorldIntent how are you
+
+AMAZON.HelpIntent help
+AMAZON.HelpIntent help me
+AMAZON.HelpIntent I need help
+AMAZON.HelpIntent need help
+
+AMAZON.StopIntent quit
+AMAZON.StopIntent exit
+AMAZON.StopIntent stop
+AMAZON.StopIntent good bye
+AMAZON.StopIntent close
+AMAZON.StopIntent end tracking
+
+OrderStatusIntent status {Preposition} {OrderNumber}
+OrderStatusIntent status {Preposition} an {OrderNumber}
+OrderStatusIntent status {Preposition} the {OrderNumber}
+OrderStatusIntent order status {Preposition} {OrderNumber}
+OrderStatusIntent {Action} order status {Preposition} {OrderNumber}
+OrderStatusIntent {Action} me order status {Preposition} {OrderNumber}
+OrderStatusIntent {Action} me an order status {Preposition} {OrderNumber}
+OrderStatusIntent {Action} me the order status {Preposition} {OrderNumber}
+OrderStatusIntent please {Action} me order status {Preposition} {OrderNumber}
+OrderStatusIntent can you {Action} me order status {Preposition} {OrderNumber}
+OrderStatusIntent please {Action} me an order status {Preposition} {OrderNumber}
+OrderStatusIntent please {Action} me the order status {Preposition} {OrderNumber}
+OrderStatusIntent can you {Action} me an order status {Preposition} {OrderNumber}
+OrderStatusIntent {Action} the order status {Preposition} the order {OrderNumber}
+OrderStatusIntent can you {Action} me the order status {Preposition} {OrderNumber}
+OrderStatusIntent {Action} me the order status {Preposition} the order {OrderNumber}
+OrderStatusIntent can you {Action} me the status {Preposition} the order {OrderNumber}
+OrderStatusIntent can you please {Action} me the status {Preposition} the order {OrderNumber}
+
+OrdersIntent {Position} {OrderCount} order
+OrdersIntent {Position} {OrderCount} orders
+OrdersIntent {Action} {Position} {OrderCount} order
+OrdersIntent {Action} {Position} {OrderCount} orders
+OrdersIntent {Action} me the {Position} {OrderCount} order
+OrdersIntent {Action} me the {Position} {OrderCount} orders
+OrdersIntent can you {Action} me the {Position} {OrderCount} order
+OrdersIntent can you {Action} me the {Position} {OrderCount} orders
+OrdersIntent please {Action} me the {Position} {OrderCount} order
+OrdersIntent please {Action} me the {Position} {OrderCount} orders
+
+OrderDetailIntent details {Preposition} {OrderNumber}
+OrderDetailIntent detail {Preposition} {OrderNumber}
+OrderDetailIntent details {Preposition} an order {OrderNumber}
+OrderDetailIntent detail {Preposition} an order {OrderNumber}
+OrderDetailIntent details {Preposition} {OrderNumber}
+OrderDetailIntent detail {Preposition} {OrderNumber}
+OrderDetailIntent details {Preposition} the order {OrderNumber}
+OrderDetailIntent detail {Preposition} the order {OrderNumber}
+OrderDetailIntent order detail {Preposition} {OrderNumber}
+OrderDetailIntent order details {Preposition} {OrderNumber}
+OrderDetailIntent {Action} order detail {Preposition} {OrderNumber}
+OrderDetailIntent {Action} order details {Preposition} {OrderNumber}
+OrderDetailIntent {Action} me order detail {Preposition} {OrderNumber}
+OrderDetailIntent {Action} me order details {Preposition} {OrderNumber}
+OrderDetailIntent {Action} me an order detail {Preposition} {OrderNumber}
+OrderDetailIntent {Action} me an order details {Preposition} {OrderNumber}
+OrderDetailIntent {Action} me the order detail {Preposition} {OrderNumber}
+OrderDetailIntent {Action} me the order details {Preposition} {OrderNumber}
+OrderDetailIntent please {Action} me order detail {Preposition} {OrderNumber}
+OrderDetailIntent please {Action} me order details {Preposition} {OrderNumber}
+OrderDetailIntent please {Action} me an order detail {Preposition} {OrderNumber}
+OrderDetailIntent please {Action} me an order details {Preposition} {OrderNumber}
+OrderDetailIntent please {Action} me the order detail {Preposition} {OrderNumber}
+OrderDetailIntent please {Action} me the order details {Preposition} {OrderNumber}
+OrderDetailIntent can you {Action} me order detail {Preposition} {OrderNumber}
+OrderDetailIntent can you {Action} me order details {Preposition} {OrderNumber}
+OrderDetailIntent can you {Action} me an order detail {Preposition} {OrderNumber}
+OrderDetailIntent can you {Action} me an order details {Preposition} {OrderNumber}
+OrderDetailIntent can you {Action} me the order detail {Preposition} {OrderNumber}
+OrderDetailIntent can you {Action} me the order details {Preposition} {OrderNumber}
