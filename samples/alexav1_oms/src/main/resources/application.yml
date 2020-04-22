@@ -1,0 +1,58 @@
+---
+
+spring:
+  application:
+    name: alexa-hello
+  thymeleaf:
+    cache: false
+  datasource:    
+      url: jdbc:mysql://us-cdbr-iron-east-03.cleardb.net:3306/ad_6c8971fa5f71c05?useSSL=false
+      username: b12c4c96ffba50
+      password: 48873049
+      driver-class-name: com.mysql.jdbc.Driver
+      tomcat:
+        initial-size: 2        
+        #max-idle: 2        
+        max-active: 2
+        #min-idle:  2
+      
+  jpa:
+      #database-platform:      org.hibernate.dialect.MySQLInnoDBDialect
+      database: MYSQL
+      generate-ddl: true
+      hibernate:
+        ddl-auto: update      
+        naming:
+          strategy: org.hibernate.cfg.DefaultNamingStrategy
+      show-sql: true
+ 
+security:
+  ignored: /alexaOms
+    
+  basic:
+    enabled: false 
+  oauth2:    
+    client:
+      client-id: alexa
+      client-secret: alexa_secret
+     # access-token-validity-seconds: 1800
+     # refresh-token-validity-seconds: 1800
+     # scope: read, write
+     # grant-type: implicit
+     # authorized-grant-types: implicit
+     # authorities: ROLE_USER
+      
+  
+    
+          
+ 
+logging:
+  level:
+    org.hibernate.type: trace
+    com.alexa.oms: trace
+    org.springframework.security: debug
+    
+application:
+  id: ${amznAppID:alexa-hello}
+
+      

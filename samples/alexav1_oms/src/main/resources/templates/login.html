@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="ISO-8859-1"/>
+		<title>Insert title here</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" ></link>
+	</head>
+	<body>
+		
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<h3>Alexa Order Tracking System Login</h3>								
+				<br/><br/>
+			</div>
+		</div>
+	
+		<form  method="POST" action="/login">			
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-1">
+					User Name				
+				</div>
+				<div class="col-md-5">
+					<input type="text" id="uid001"/>				
+				</div>
+			</div>
+			<br/>
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-1">					
+					Password:
+				</div>				
+				<div class="col-md-5">					
+					<input type="password"  id="passwd001"/>
+				</div>
+			</div>
+			<br/>	
+			<div class="row">
+				<div class="col-md-3"></div>
+				<div class="col-md-4">
+					<input type="submit" id="sub001"/>
+				</div>
+			</div>					 
+			
+		</form>
+	</body>
+
+</html>
