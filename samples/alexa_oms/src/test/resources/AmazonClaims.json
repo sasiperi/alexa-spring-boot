@@ -1,0 +1,13 @@
+{
+	"exp": 1491960909,
+	"user_name": "a@b.com",
+	"authorities": [
+		"ROLE_USER"
+	],
+	"jti": "cbc2540a-0957-4d0f-94ae-582d29acd7d1",
+	"client_id": "alexa_oms",
+	"scope": [
+		"read",
+		"write"
+	]
+}

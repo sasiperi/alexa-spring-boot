@@ -1,0 +1,73 @@
+{
+  "intents": 
+  [
+    {
+      "intent": "HelloWorldIntent"
+    },   
+    {
+      "intent": "OrderStatusIntent",
+      "slots": 
+      [
+      	{
+      		
+          "name": "Action",
+          "type": "LIST_OF_ACTIONS"
+        },  
+        {      		
+          "name": "Preposition",
+          "type": "LIST_OF_PREPOSITIONS"
+        },    	
+        {
+          "name": "OrderNumber",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
+    },
+    {
+      "intent": "OrdersIntent",
+      "slots": 
+      [
+        {
+          "name": "Action",
+          "type": "LIST_OF_ACTIONS"
+        },
+        {
+          "name": "Position",
+          "type": "LIST_OF_POSITIONS"
+        },
+         {
+          "name": "OrderCount",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
+    },
+    {
+      "intent": "OrderDetailIntent",
+       "slots": 
+      [
+      	{
+          "name": "Action",
+          "type": "LIST_OF_ACTIONS"
+        },
+        {      		
+          "name": "Preposition",
+          "type": "LIST_OF_PREPOSITIONS"
+        },  
+        {
+          "name": "OrderNumber",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    }    
+    
+  ]
+}

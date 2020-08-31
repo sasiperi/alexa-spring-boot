@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="ISO-8859-1"/>
+		<title>Insert title here</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" ></link>
+	</head>
+	<body>
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">&nbsp;&nbsp;&nbsp;&nbsp;</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				
+				<p><hr/></p>
+				<p>SSO PROPS</p>
+				<p><hr/></p>
+				
+				<p>Name/UID of Principal :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue" th:text="${p_name}"></font> </p>
+				<p>JWT Token :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue" th:text="${jwt}"></font> </p>
+				<p>Principal/Auth :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="blue" th:text="${principal}"></font> </p>
+				
+				
+			</div>		
+		</div>
+		
+	</body>
+</html>
