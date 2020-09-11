@@ -1,0 +1,56 @@
+---
+server:
+  port: 9090
+spring:
+  application:
+    name: alexa-oms
+
+  thymeleaf:
+    cache: false
+  datasource:    
+      url: jdbc:mysql://localhost:3306/alexa_oms?useSSL=false&serverTimezone=US/Eastern&allowPublicKeyRetrieval=true
+      username: root
+      password: 12345
+      #driver-class-name: com.mysql.jdbc.Driver
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      tomcat:
+        initial-size: 2        
+        #max-idle: 2        
+        max-active: 2
+        #min-idle:  2
+      
+  jpa:
+      #database-platform:      org.hibernate.dialect.MySQLInnoDBDialect
+      database-platform: org.hibernate.dialect.MySQL5Dialect
+      database: MYSQL
+      generate-ddl: true
+      hibernate:
+        ddl-auto: update      
+        #naming:
+          #strategy: org.hibernate.cfg.DefaultNamingStrategy
+      show-sql: true
+ 
+  #security:
+    #oauth2:
+      #resourceserver:
+        #jwt:
+          #issuer-uri: http://localhost:9090/
+          #jwk-set-uri: http://localhost:9090/.well-known/jwks.json
+
+  
+ 
+logging:
+  level:
+    org.hibernate.type: trace
+    com.alexa.oms: trace
+    org.springframework.security: debug
+  
+
+###The application id that alexa(dev) provides amzn1.ask.skill.xxxxxxx###
+alexa:
+  application-id: ${amznAppID:amzn1.ask.skill.bf1cd3c3-0b00-4ca4-b92b-68276106ba56}
+  card-title: alexa-oms
+  speechlet-uri-mappings:
+  - /alexaOms
+  response:    
+    good-bye: good bye   
